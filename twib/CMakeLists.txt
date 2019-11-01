@@ -19,6 +19,8 @@ set(MSGPACK11_BUILD_TESTS OFF CACHE BOOL "Build msgpack11 unit tests")
 
 set(WITH_SYSTEMD OFF CACHE BOOL "Enable systemd integration in twibd")
 
+set(TWIB_PYBIND11 ON CACHE BOOL "Build pybind11 bindings")
+
 if(NOT WIN32)
 	set(TWIB_GDB_ENABLED ON CACHE BOOL "Enable GDB stub in twib")
 else()
@@ -85,6 +87,8 @@ message(STATUS "twibd libusbk hotplug enabled: ${TWIBD_LIBUSBK_HOTPLUG_ENABLED}"
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 add_definitions("-DPROJECT_ROOT=\"${PROJECT_SOURCE_DIR}\"") # for logging
 

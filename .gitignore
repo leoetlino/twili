@@ -4,3 +4,4 @@ build/
 /twib/.vs
 /twib/CMakeSettings.json
 .vscode
+.mypy_cache
